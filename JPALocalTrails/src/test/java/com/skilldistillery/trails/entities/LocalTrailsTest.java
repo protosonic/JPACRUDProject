@@ -44,7 +44,7 @@ class LocalTrailsTest {
 	@Test
 	void test_LocalTrails_entity_mapping() {
 		assertNotNull(trail);
-		assertEquals("Little Rattler", trail.getName());
+		assertEquals("Cottonwood Loop", trail.getName());
 	}
 
 }

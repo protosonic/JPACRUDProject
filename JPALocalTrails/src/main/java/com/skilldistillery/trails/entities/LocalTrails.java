@@ -1,7 +1,5 @@
 package com.skilldistillery.trails.entities;
 
-import java.time.LocalDate;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,27 +16,26 @@ public class LocalTrails {
 	private int id;
 
 	private String name;
+
 	@Column(name = "length_miles")
 	private double lengthMiles;
+
 	private String difficulty;
-	@Column(name = "trail_head_altitude")
-	private int trailHeadAlt;
-	@Column(name = "trail_end_altitude")
-	private int trailEndAlt;
-	@Column(name = "dog_friendly")
-	private boolean dogFriendly;
-	@Column(name = "bike_friendly")
-	private boolean bikeFriendly;
-	@Column(name = "trail_head_longitude")
-	private double trailHeadLongitude;
-	@Column(name = "trail_head_latitude")
-	private double trailHeadLatitude;
-	@Column(name = "trail_end_longitude")
-	private double trailEndLongitude;
-	@Column(name = "trail_end_latitude")
-	private double trailEndLatitude;
-	@Column(name = "last_maintained")
-	private String lastMaintainted;
+
+	@Column(name = "single_track_percentage")
+	private int singleTrackPercent;
+
+	@Column(name = "alt_high")
+	private int altitudeHigh;
+
+	@Column(name = "alt_low")
+	private int altitudeLow;
+
+	@Column(name = "avg_grade")
+	private double avgGrade;
+
+	@Column(name = "max_grade")
+	private double maxGrade;
 
 	public LocalTrails() {
 		super();
@@ -60,12 +57,12 @@ public class LocalTrails {
 		this.name = name;
 	}
 
-	public double getLength_miles() {
+	public double getLengthMiles() {
 		return lengthMiles;
 	}
 
-	public void setLength_miles(double length_miles) {
-		this.lengthMiles = length_miles;
+	public void setLengthMiles(double lengthMiles) {
+		this.lengthMiles = lengthMiles;
 	}
 
 	public String getDifficulty() {
@@ -76,85 +73,69 @@ public class LocalTrails {
 		this.difficulty = difficulty;
 	}
 
-	public int getTrailHeadAlt() {
-		return trailHeadAlt;
+	public int getSingleTrackPercent() {
+		return singleTrackPercent;
 	}
 
-	public void setTrailHeadAlt(int trailHeadAlt) {
-		this.trailHeadAlt = trailHeadAlt;
+	public void setSingleTrackPercent(int singleTrackPercent) {
+		this.singleTrackPercent = singleTrackPercent;
 	}
 
-	public int getTrailEndAlt() {
-		return trailEndAlt;
+	public int getAltitudeHigh() {
+		return altitudeHigh;
 	}
 
-	public void setTrailEndAlt(int trailEndAlt) {
-		this.trailEndAlt = trailEndAlt;
+	public void setAltitudeHigh(int altitudeHigh) {
+		this.altitudeHigh = altitudeHigh;
 	}
 
-	public boolean isDogFriendly() {
-		return dogFriendly;
+	public int getAltitudeLow() {
+		return altitudeLow;
 	}
 
-	public void setDogFriendly(boolean dogFriendly) {
-		this.dogFriendly = dogFriendly;
+	public void setAltitudeLow(int altitudeLow) {
+		this.altitudeLow = altitudeLow;
 	}
 
-	public boolean isBikeFriendly() {
-		return bikeFriendly;
+	public double getAvgGrade() {
+		return avgGrade;
 	}
 
-	public void setBikeFriendly(boolean bikeFriendly) {
-		this.bikeFriendly = bikeFriendly;
+	public void setAvgGrade(double avgGrade) {
+		this.avgGrade = avgGrade;
 	}
 
-	public double getTrailHeadLongitude() {
-		return trailHeadLongitude;
+	public double getMaxGrade() {
+		return maxGrade;
 	}
 
-	public void setTrailHeadLongitude(double trailHeadLongitude) {
-		this.trailHeadLongitude = trailHeadLongitude;
-	}
-
-	public double getTrailHeadLatitude() {
-		return trailHeadLatitude;
-	}
-
-	public void setTrailHeadLatitude(double trailHeadLatitude) {
-		this.trailHeadLatitude = trailHeadLatitude;
-	}
-
-	public double getTrailEndLongitude() {
-		return trailEndLongitude;
-	}
-
-	public void setTrailEndLongitude(double trailEndLongitude) {
-		this.trailEndLongitude = trailEndLongitude;
-	}
-
-	public double getTrailEndLatitude() {
-		return trailEndLatitude;
-	}
-
-	public void setTrailEndLatitude(double trailEndLatitude) {
-		this.trailEndLatitude = trailEndLatitude;
-	}
-
-	public String getLastMaintainted() {
-		return lastMaintainted;
-	}
-
-	public void setLastMaintainted(String lastMaintainted) {
-		this.lastMaintainted = lastMaintainted;
+	public void setMaxGrade(double maxGrade) {
+		this.maxGrade = maxGrade;
 	}
 
 	@Override
 	public String toString() {
-		return "LocalTrails [id=" + id + ", name=" + name + ", length_miles=" + lengthMiles + ", difficulty="
-				+ difficulty + ", trailHeadAlt=" + trailHeadAlt + ", trailEndAlt=" + trailEndAlt + ", dogFriendly="
-				+ dogFriendly + ", bikeFriendly=" + bikeFriendly + ", trailHeadLongitude=" + trailHeadLongitude
-				+ ", trailHeadLatitude=" + trailHeadLatitude + ", trailEndLongitude=" + trailEndLongitude
-				+ ", trailEndLatitude=" + trailEndLatitude + ", lastMaintainted=" + lastMaintainted + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("LocalTrails [id=");
+		builder.append(id);
+		builder.append(", name=");
+		builder.append(name);
+		builder.append(", lengthMiles=");
+		builder.append(lengthMiles);
+		builder.append(", difficulty=");
+		builder.append(difficulty);
+		builder.append(", singleTrackPercent=");
+		builder.append(singleTrackPercent);
+		builder.append(", altitudeHigh=");
+		builder.append(altitudeHigh);
+		builder.append(", altitudeLow=");
+		builder.append(altitudeLow);
+		builder.append(", avgGrade=");
+		builder.append(avgGrade);
+		builder.append(", maxGrade=");
+		builder.append(maxGrade);
+		builder.append("]");
+		return builder.toString();
 	}
 
 }
