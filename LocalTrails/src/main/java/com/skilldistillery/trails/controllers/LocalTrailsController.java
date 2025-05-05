@@ -58,7 +58,7 @@ public class LocalTrailsController {
 	}
 
 	@RequestMapping(path = "updateTrail", method = RequestMethod.POST)
-	public ModelAndView updateTrail(int trailId, @ModelAttribute LocalTrails trail) {
+	public ModelAndView updateTrail(@RequestParam("trailId") int trailId, @ModelAttribute LocalTrails trail) {
 		trailId = trail.getId();
 	    LocalTrails updatedTrail = trailsDao.updateTrail(trailId, trail);
 	    ModelAndView mv = new ModelAndView();
