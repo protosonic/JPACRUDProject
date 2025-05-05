@@ -1,6 +1,6 @@
 # JPACRUDProject
 ## Local Trails Management System
-Welcome! LocalTrails Managment System full-stack application that enables users to break free from the crowd. This application empowers hikers and cyclysts alike to collect and manage their favorite local trail systems. Simple, easy, and effective Local Trail Management System will store your favorite trails, leaving your memory to be filled with all of your elevating adventures. Get outdoors!
+Welcome! Local Trails Managment System is full-stack application that enables users to break free from the crowd. This application empowers hikers and cyclysts alike to collect and manage their favorite local trail systems. Simple, easy, and effective Local Trail Management System will store your favorite trails, leaving your memory to be filled with all of your elevating adventures. Get outdoors!
 
 ## Description
 This is a simple web application to manage local trails using Spring Boot, JSP, and Hibernate/JPA. Users can perform CRUD (Create, Read, Update, Delete) operations on a list of local trails, allowing for easy addition, viewing, editing, and deletion of trails.
