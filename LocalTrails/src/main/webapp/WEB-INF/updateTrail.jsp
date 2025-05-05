@@ -10,7 +10,7 @@
     <h1>Update Trail</h1>
   <form action="updateTrail" method="post">
   
-    <input type="text" name="trailId" value="${trail.id}" />
+    <input type="hidden" name="trailId" value="${trail.id}" />
     
     <label for="name">Trail Name:</label>
     <input type="text" name="name" value="${trail.name}" required /><br/>

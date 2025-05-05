@@ -25,7 +25,7 @@ public class LocalTrailsDAOImpl implements LocalTrailsDAO {
 
 	@Override
 	public LocalTrails findById(int trailId) {
-		return em.find(LocalTrails.class, 1);
+		return em.find(LocalTrails.class, trailId);
 	}
 
 	@Override
@@ -51,7 +51,6 @@ public class LocalTrailsDAOImpl implements LocalTrailsDAO {
 			existingTrail.setSingleTrackPercent(updatedTrail.getSingleTrackPercent());
 			existingTrail.setAltitudeHigh(updatedTrail.getAltitudeHigh());
 			existingTrail.setAltitudeLow(updatedTrail.getAltitudeLow());
-			em.merge(existingTrail);
 		}
 		return existingTrail;
 	}
