@@ -25,7 +25,6 @@ public class LocalTrailsDAOImpl implements LocalTrailsDAO {
 
 	@Override
 	public LocalTrails findById(int trailId) {
-
 		return em.find(LocalTrails.class, 1);
 	}
 
@@ -56,5 +55,16 @@ public class LocalTrailsDAOImpl implements LocalTrailsDAO {
 		}
 		return existingTrail;
 	}
+	
+	@Override
+	public boolean deleteTrail(int trailId) {
+	    LocalTrails trail = em.find(LocalTrails.class, trailId);
+	    if (trail != null) {
+	        em.remove(trail);
+	        return true;
+	    }
+	    return false;
+	}
+
 
 }

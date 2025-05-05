@@ -9,5 +9,6 @@ public interface LocalTrailsDAO {
 	List<LocalTrails> findAll();
 	LocalTrails createTrail(LocalTrails trail);
 	LocalTrails updateTrail(int trailId, LocalTrails updatedtrail);
+	boolean deleteTrail(int trailId);
 
 }

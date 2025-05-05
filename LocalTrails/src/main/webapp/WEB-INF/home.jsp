@@ -14,8 +14,6 @@
 	<ul>
 		<li><a href="showAllTrails">Show All Trails</a></li>
 		<li><a href="createTrail">Add a New Trail</a></li>
-		<li><a href="updateTrail">Update a Trail</a></li>
-		<li><a href="deleteTrail">Delete a Trail</a></li>
 	</ul>
 </body>
 </html>

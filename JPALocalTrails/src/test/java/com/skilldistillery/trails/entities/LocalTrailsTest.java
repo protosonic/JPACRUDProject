@@ -45,6 +45,13 @@ class LocalTrailsTest {
 	void test_LocalTrails_entity_mapping() {
 		assertNotNull(trail);
 		assertEquals("Cottonwood Loop", trail.getName());
+		assertEquals(22.9, trail.getLengthMiles());
+		assertEquals("Difficult", trail.getDifficulty());
+		assertEquals(75, trail.getSingleTrackPercent());
+		assertEquals(8935, trail.getAltitudeHigh());
+		assertEquals(7030, trail.getAltitudeLow());
+		assertEquals(4.0, trail.getAvgGrade());
+		assertEquals(15.0, trail.getMaxGrade());
 	}
 
 }

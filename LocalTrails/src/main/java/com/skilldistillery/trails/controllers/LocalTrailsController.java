@@ -3,9 +3,9 @@ package com.skilldistillery.trails.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.trails.data.LocalTrailsDAO;
@@ -47,22 +47,33 @@ public class LocalTrailsController {
 		return mv;
 	}
 	
-    @RequestMapping(path = "updateForm/{trailId}", method = RequestMethod.GET)
-    public ModelAndView showUpdateForm(@PathVariable int trailId) {
-        ModelAndView mv = new ModelAndView();
-        LocalTrails trail = trailsDao.findById(trailId);
-        mv.addObject("trail", trail);
-        mv.setViewName("updateTrail");
-        return mv;
-    }
+	@RequestMapping(path = "updateForm", method = RequestMethod.GET)
+	public ModelAndView showUpdateForm(@RequestParam("trailId") int trailId) {
+	    System.out.println("Received trailId in URL: " + trailId); 
+	    ModelAndView mv = new ModelAndView();
+	    LocalTrails trail = trailsDao.findById(trailId);
+	    mv.addObject("trail", trail);
+	    mv.setViewName("updateTrail");
+	    return mv;
+	}
 
-    @RequestMapping(path = "updateTrail/{trailId}", method = RequestMethod.POST)
-    public ModelAndView updateTrail(@PathVariable int trailId, @ModelAttribute LocalTrails trail) {
-        LocalTrails updatedTrail = trailsDao.updateTrail(trailId, trail);
-        ModelAndView mv = new ModelAndView();
-        mv.addObject("trail", updatedTrail);
-        mv.addObject("trailList", trailsDao.findAll());
-        mv.setViewName("showAllTrails");
-        return mv;
-    }
+	@RequestMapping(path = "updateTrail", method = RequestMethod.POST)
+	public ModelAndView updateTrail(int trailId, @ModelAttribute LocalTrails trail) {
+		trailId = trail.getId();
+	    LocalTrails updatedTrail = trailsDao.updateTrail(trailId, trail);
+	    ModelAndView mv = new ModelAndView();
+	    mv.addObject("trail", updatedTrail);
+	    mv.addObject("trailList", trailsDao.findAll());
+	    mv.setViewName("showAllTrails");
+	    return mv;
+	}
+	@RequestMapping(path = "deleteTrail", method = RequestMethod.POST)
+	public ModelAndView deleteTrail(@RequestParam("trailId") int trailId) {
+	    trailsDao.deleteTrail(trailId);
+	    ModelAndView mv = new ModelAndView();
+	    mv.addObject("trailList", trailsDao.findAll());
+	    mv.setViewName("showAllTrails");
+	    return mv;
+	}
+
 }
