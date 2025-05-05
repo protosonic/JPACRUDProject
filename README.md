@@ -43,8 +43,8 @@ This is a simple web application to manage local trails using Spring Boot, JSP, 
 ### 1. Clone the Repository
 Clone the repository to your local machine:
 - bash
-- git clone https://github.com/your-username/local-trails-management.git
-- cd local-trails-management
+- git clone https://github.com/protosonic/JPACRUDProject
+- cd JPACRUDProject
 ### 2. Build the Project
 - gradle c;ean build
 - gradle bootRun
