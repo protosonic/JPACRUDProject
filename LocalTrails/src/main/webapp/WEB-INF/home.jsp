@@ -6,16 +6,16 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>LocalTrails - Home</title>
+	<title>Local Trails - Home</title>
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="bg-light">
+<body class="bg-light" style="background: linear-gradient(to bottom, #2e8b57, #87ceeb);">
 
 	<!-- NAVBAR -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="#">LocalTrails</a>
+			<a class="navbar-brand" href="#">Local Trails</a>
 			<div class="collapse navbar-collapse">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">

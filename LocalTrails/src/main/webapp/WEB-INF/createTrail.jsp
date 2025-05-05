@@ -1,22 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Create Trail</title>
+    <title>Local Trails - Create Trail</title>
+    	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="bg-light">
+<body class="bg-light" style="background: linear-gradient(to bottom, #2e8b57, #87ceeb);">
 	<!-- NAVBAR -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
 		<div class="container">
-			<a class="navbar-brand" href="home">LocalTrails</a>
+			<a class="navbar-brand" href="home">Local Trails</a>
 			<div>
-				<a class="btn btn-outline-light me-2" href="createTrail">Add New Trail</a>
 				<a class="btn btn-outline-light me-2" href="home">Home</a>
+				<a class="btn btn-outline-light me-2" href="createTrail">Add New Trail</a>
 				<a class="btn btn-outline-light" href="showAllTrails">All Trails</a>
 			</div>
 		</div>
